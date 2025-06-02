@@ -1,0 +1,386 @@
+/* versión Mobile */
+
+body {
+    display: grid;
+    color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    margin: 0;
+    grid-template-areas:
+    "menu"
+    "navbar"
+    "main"
+    "footer";
+}
+
+.navbar{
+   grid-area: navbar;
+   background-color: rgb(0, 130, 139);
+   color: rgb(253, 252, 252);
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    align-items: center;
+    padding: 25px;
+    width: auto;
+    font-size: 15px;
+
+}
+
+
+.navlink{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    display: none;
+}
+
+.menu-lateral{
+    grid-area: menu;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+.main-container {
+    grid-area: main;
+    justify-content: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.footer {
+    grid-area: footer;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+}
+
+.grilla-productos{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 10px;
+
+}
+
+.carta-producto{
+    background-color: white;
+    color: black;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+.carta-producto img{
+    border-radius: 0px;
+    object-fit: cover;
+    border-radius: 10px;
+    width: 180px;
+    transition-property: color;
+    transition-timing-function: linear;
+    transition-delay: 0,5s;
+    transition-duration: 0,5s;
+
+}
+
+.carta-producto img:hover{
+    width: 200px;
+    scale: 1,3;
+    border-radius: 10px;
+    filter: grayscale(100%);
+
+
+
+}
+
+.redes-sociales{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.btn{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 10px;
+
+}
+
+.btn:hover{
+    background-color:rgb(0, 130, 139);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 10px;
+
+}
+
+h2{
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-family: arial;
+    font-weight: 100;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+
+.filtro{
+height: 50px;
+width: 100%;
+max-width: 1200px;
+display: flex;
+justify-content: center;
+box-sizing: border-box;
+font-size: 15px;
+transition-property: color;
+    transition-timing-function: linear;
+    transition-delay: 0,5s;
+    transition-duration: 0,5s;
+
+}
+
+.filtro:hover{
+color: rgb(0, 0, 0);
+background-color: rgb(243, 243, 243);
+}
+
+img.logo-principal{
+    width: 200px;
+}
+
+.mobile-button{
+  height: 40px;
+  order: 3;
+  align-items: center;
+
+}
+
+
+.menu-pdt{
+    display: none;
+}
+
+.logo-principal{
+
+  height: auto;
+    width: 200px;
+    align-items: center;
+    animation-name: move;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes move {
+   0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.principal-logo{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+
+li{
+    transition-property: color;
+    transition-timing-function: linear;
+    transition-delay: 0,5s;    /* cuanto demora en hacer efecto el cambio */
+    transition-duration: 0,5s; /* cuanto dura la trancisión */
+
+}
+
+li:hover{
+   color: darkcyan;
+
+}
+
+.footertext{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5%;
+
+
+}
+
+/* Fin versión mobile */
+
+
+
+/* versión desktop  */
+
+@media (min-width: 576px) {
+    body {
+        grid-template-areas:
+        "menu navbar"
+        "menu main"
+        "footer main";
+        grid-template-columns: 1fr 4fr;
+        background-color: rgb(255, 255, 255);
+        margin: 0;
+  }
+
+.grilla-productos{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 10px;
+}
+
+.menu-lateral{
+    flex-direction: vertical;
+    padding: 10px;
+    background-image: url(../Img/rm321-adj-27-d.jpg) ;
+    color: white;
+    display: flex;
+    justify-content: start;
+    text-align: center;
+    text-decoration: none;
+
+
+}
+
+.footer {
+    grid-area: footer;
+    background-color: rgb(0, 122, 112);
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    font-size: 14px;
+    gap: 10px;
+
+}
+
+.redes-sociales{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 50px;
+    padding-top: 10px;
+}
+
+.navbar{
+   background-color: rgb(212, 212, 212);
+   color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items:center;
+    padding: 15px;
+    font-size: 15px;
+}
+
+.Logo{
+   display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+
+}
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+.fa-brands{
+    color: rgb(247, 247, 247);
+    display: flex;
+}
+
+
+.filtro{
+height: 50px;
+
+}
+
+img.logo-principal{
+    width: 300px;
+}
+
+ul{
+text-decoration: none;
+display: flex;
+justify-content: center;
+}
+
+.mobile-button {
+    display: none;
+
+}
+.menu-pdt{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    font-style: arial;
+    list-style: none;
+    justify-content: center;
+    gap: 15px;
+    font-size: 20px;
+    padding-top: 25px;
+    align-items: center;
+
+}
+
+.navbar-mobile{
+    display: none;
+}
+
+li{
+    display: flex;
+    justify-content: center;
+
+}
+
+.pagina-activa{
+    color: rgb(255, 253, 253);
+    background-color: black;
+}
+
+.pagina-activa:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 122, 112);
+}
+
+}
+/* Fin versión desktop  */
